@@ -136,4 +136,120 @@ Waterfall → "Plan everything first, then build once."
 
 Agile → "Build small pieces, get feedback, improve continuously."
 
+🔹 Kubernetes Components
+1. Control Plane Components (manage the cluster, make global decisions)
+
+API Server (kube-apiserver)
+
+Entry point of the cluster.
+
+All components, CLI (kubectl), and users talk to it via REST API.
+
+Handles authentication, validation, and communication.
+
+etcd
+
+Key-value database that stores the cluster state (pods, services, configs, etc.).
+
+Highly available and consistent.
+
+Controller Manager (kube-controller-manager)
+
+Runs controllers that ensure the cluster state matches the desired state.
+
+Examples:
+
+Node Controller → tracks node health.
+
+Replication Controller → ensures correct number of pods.
+
+Endpoint Controller → updates Services.
+
+Scheduler (kube-scheduler)
+
+Assigns newly created pods to nodes.
+
+Decides placement based on resources, constraints, taints/tolerations, affinity, etc.
+
+2. Node Components (run on every worker node)
+
+Kubelet
+
+Agent on each node.
+
+Talks to API Server.
+
+Ensures containers are running as defined in PodSpecs.
+
+Kube-Proxy
+
+Handles networking on each node.
+
+Manages Services, load-balancing, and forwarding traffic to pods.
+
+Container Runtime
+
+Runs containers.
+
+Examples: containerd, CRI-O, Docker (deprecated).
+
+3. Add-on Components (not core, but essential in real use)
+
+DNS (CoreDNS)
+
+Provides internal DNS for Services and Pods.
+
+Lets pods talk to each other with names instead of IPs.
+
+Ingress Controller
+
+Manages external access (HTTP/HTTPS) to services.
+
+Example: NGINX Ingress, Traefik.
+
+Dashboard
+
+Web UI for managing the cluster.
+
+Monitoring & Logging
+
+Tools like Prometheus, Grafana, Fluentd, ELK stack.
+
+Network Plugins (CNI)
+
+Provide pod-to-pod networking across nodes.
+
+Examples: Calico, Flannel, Cilium, Weave.
+
+📊 Summary: Kubernetes Components
+Control Plane
+
+API Server
+
+etcd
+
+Controller Manager
+
+Scheduler
+
+Node
+
+Kubelet
+
+Kube-Proxy
+
+Container Runtime
+
+Add-ons
+
+CoreDNS
+
+Ingress Controller
+
+Dashboard
+
+Monitoring & Logging
+
+Network Plugins
+
 DevOps → "Automate everything, deliver continuously, monitor in real-time."
