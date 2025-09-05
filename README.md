@@ -1,8 +1,20 @@
 
 
+### Azure Container Apps (In between PAAS and IAAS) stands as 5th container service in Azure
+
+(i) Azure App Services
+
+(ii) Container Service
+
+(iii) Conatiner Instance
+
+(iv) Functions, when containerized
+
 **A) End-to-End Explanation of Docker**
 
 **B) Azure Kubernetes Service**
+
+**C) Azure Container Apps**
 
 ### A) End-to-End Explanation of Docker
 
@@ -313,3 +325,104 @@ Conclusion
 This demo demonstrates how easy it is to create a Kubernetes cluster in Azure using AKS, deploy an application, and scale it as needed — all without worrying about manual orchestration. With Azure handling the control plane, and customers managing only the applications, AKS strikes a perfect balance of simplicity, power, and flexibility.
 
 The Bosch use case proves how AKS can handle real-time, mission-critical workloads, while the demo highlights its ease of setup and deployment. Overall, AKS delivers a scalable, cost-effective, and highly available Kubernetes platform, making it one of the best solutions for modern containerized applications.
+
+
+### **C) Azure Container Apps:**
+
+**Two Important: DAPR, KEDA**
+
+Azure Container Apps Overview
+
+Introduction:
+
+Azure Container Apps is a serverless container platform that allows you to run containerized applications without managing underlying infrastructure.
+
+It focuses on cost efficiency, security, and stability while handling deployment, orchestration, and scaling automatically.
+
+Background:
+
+Introduced at Microsoft Ignite 2021, it is the fifth container service in Azure, alongside App Services, Container Service, Container Instances, and Functions.
+
+Provides Kubernetes capabilities without the complexity, acting as a hybrid between Platform-as-a-Service (PaaS) and Infrastructure-as-a-Service (IaaS).
+
+Key Benefits
+
+No Infrastructure Management:
+
+Azure Container Apps manages scaling, load balancing, and security.
+
+Developers focus purely on code.
+
+Autoscaling:
+
+Applications can scale automatically from zero to any number of instances.
+
+Optimizes resource usage and cost efficiency.
+
+KEDA Integration (Kubernetes Event-Driven Autoscaler):
+
+Supports event-driven scaling based on metrics like message queue length or Prometheus metrics.
+
+Handles external events seamlessly.
+
+Dapr Integration (Distributed Application Runtime):
+
+Simplifies microservices development.
+
+Allows easy integration of services like storage, caching, messaging, and databases.
+
+Supports mutual TLS and distributed tracing for secure and observable apps.
+
+Background Services:
+
+Supports long-running, always-on background tasks.
+
+Can process queues, batch jobs, or continuous events, with optional secure ingress.
+
+Use Cases
+
+Microservices:
+
+Ideal for independently deployable and scalable microservices-based applications.
+
+Event-Driven Applications:
+
+Suitable for apps responding to events from Azure Event Hubs, Service Bus, or other event sources.
+
+APIs & Web Apps:
+
+Can host APIs or web applications requiring autoscaling and high availability.
+
+Background Processing:
+
+Supports tasks like batch jobs, queue processing, or continuous background processing.
+
+Getting Started
+
+Create an Azure Container Environment:
+
+Acts as a boundary for your containerized applications.
+
+Deploy Containers:
+
+Use Azure CLI, ARM templates, or Azure Portal.
+
+Sources: Azure Container Registry or Docker Hub.
+
+Configure Ingress:
+
+Set rules to expose apps publicly or keep them private within a VNet.
+
+Monitor & Manage:
+
+Use Azure Monitor, Application Insights, and Log Analytics for logging and diagnostics.
+
+Summary
+
+Azure Container Apps provides a serverless, scalable, and secure platform for containerized applications and microservices.
+
+Combines Kubernetes power with serverless simplicity.
+
+Supports event-driven scaling (KEDA) and microservices best practices (Dapr).
+
+Suitable for new apps or cloud migration with minimal overhead.
